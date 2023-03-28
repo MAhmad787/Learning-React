@@ -9,7 +9,7 @@ const links = [
   { id: 5, name: 'Contact', link: '/' },
 ];
 
-const Navbar = ({ onOpen }) => {
+const Navbar = ({ onOpen, onClick }) => {
   return (
     <nav>
       <ul
@@ -20,7 +20,11 @@ const Navbar = ({ onOpen }) => {
         }
       >
         {links.map((link) => (
-          <li key={link.id} className="text-white sm:pr-4 pb-4">
+          <li
+            key={link.id}
+            className="text-white sm:pr-4 pb-4"
+            onClick={() => onClick(link.name)}
+          >
             <a href={link.link}></a>
             {link.name}
           </li>
